@@ -23,6 +23,7 @@ Route::prefix('events')->group(function () {
     Route::get('/', [EventsController::class, 'index'])->name('events');
     Route::get('/fetch', [EventsController::class, 'fetch'])->name('events.fetch');
     Route::post('/create', [EventsController::class, 'create'])->name('events.create');
+    Route::get('/show/{id}', [EventsController::class, 'show'])->name('events.show');
 });
 
 Route::prefix('halls')->group(function () {

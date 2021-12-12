@@ -14,9 +14,6 @@ $(function () {
             //themeSystem: 'bootstrap',
             initialView: 'dayGridMonth',
             displayEventTime: true,
-            /*events:[
-                {id:'1', title:'Event 1',start:'2021-12-11',resourceId:'a'}
-            ]*/
             eventSources: [
                 {
                     url: 'events/fetch',
@@ -26,13 +23,15 @@ $(function () {
                 $('#modal-add-event').modal('show');
                 $('#create_event').click(function () {
                     console.log("asd")
-                    let eventTitle = "New N Event";
-                    let eventStart = "2021-12-04 00:00:00";
-                    let eventEnd = "2021-12-05 00:00:00";
+                    let title_en = "New Event";
+                    let title_ar = "حدث جديد";
+                    let description = "ass";
+                    let event_start = "2021-12-25 00:01:00";
+                    let event_end = "2021-12-30 00:05:00";
                     let category_id = "0";
                     fetch('events/create', {
                         method: 'post',
-                        body: JSON.stringify({eventTitle, eventStart, eventEnd, category_id}),
+                        body: JSON.stringify({title_en, title_ar, event_start, event_end, category_id, description}),
                         headers: {
                             'Content-Type': 'application/json',
                             'X-CSRF-TOKEN': csrfToken,
@@ -64,8 +63,18 @@ $(function () {
         });
         calendar.render();
 
-        //getDaysOfWeek(calendar)
-
+        /*$('#sas').click(function () {
+            $.ajax({
+                method: "get",
+                url: "/events/show/" + 26,
+                data: {
+                    _token: $("input[name=_token]").val(),
+                },
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+        });*/
     });
 
 

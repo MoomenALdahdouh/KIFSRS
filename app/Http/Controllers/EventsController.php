@@ -15,19 +15,19 @@ class EventsController extends Controller
 
     public function fetch()
     {
-        $events = Event::query()->select('title','start','end')->get();
+        $events = Event::query()->select('title', 'start', 'end')->get();
+        //$events = Event::all();
         return response()->json($events);
     }
 
     public function create(Request $request)
     {
         $event = new Event();
-        $event->title = $request->eventTitle;
-        $event->title_ar = $request->eventTitle;
-        $event->title_en = $request->eventTitle;
+        $event->title = ['en' => $request->title_en, 'ar' => $request->title_ar];
+        $event->description = $request->description;
         $event->category_id = $request->category_id;
-        $event->start = $request->eventStart;
-        $event->end = $request->eventEnd;
+        $event->start = $request->event_start;
+        $event->end = $request->event_end;
         $event->created_at = Carbon::now();
         $event->updated_at = Carbon::now();
         $event->save();
@@ -52,7 +52,8 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = Event::find($id);
+        return $event->title;
     }
 
     /**

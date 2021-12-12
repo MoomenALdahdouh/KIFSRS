@@ -66,6 +66,7 @@
 </div>
 
 <div class="container">
+    {{--<button id="sas">Test translate</button>--}}
     <div class="card mt-5">
         <div class="card-header"><h1><i class="far fa-calendar-alt"></i>&nbsp;Events Calender</h1></div>
 
