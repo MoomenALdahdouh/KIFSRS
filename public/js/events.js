@@ -22,16 +22,17 @@ $(function () {
             dateClick: function (info) {
                 $('#modal-add-event').modal('show');
                 $('#create_event').click(function () {
-                    console.log("asd")
-                    let title_en = "New Event";
-                    let title_ar = "حدث جديد";
-                    let description = "ass";
-                    let event_start = "2021-12-25 00:01:00";
-                    let event_end = "2021-12-30 00:05:00";
+                    let title_en = $('#title_en').val();
+                    let title_ar = $('#title_ar').val();
+                    let description_en = $('#description_en').val();
+                    let description_ar = $('#description_ar').val();
+                    let event_start = $('#start').val();
+                    let event_end = $('#end').val();
                     let category_id = "0";
                     fetch('events/create', {
                         method: 'post',
-                        body: JSON.stringify({title_en, title_ar, event_start, event_end, category_id, description}),
+                        body: JSON.stringify({title_en, title_ar, event_start, event_end, category_id, description_en,
+                            description_ar}),
                         headers: {
                             'Content-Type': 'application/json',
                             'X-CSRF-TOKEN': csrfToken,

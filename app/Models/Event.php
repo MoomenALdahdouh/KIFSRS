@@ -9,9 +9,9 @@ use Spatie\Translatable\HasTranslations;
 class Event extends Model
 {
     //use HasFactory;
-    use HasTranslations;
+   // use HasTranslations;
 
-    public $translatable = ['title', 'description'];
+    //public $translatable = ['title', 'description'];
     protected $table = "events";
     protected $guarded = [];
     public $timestamps = false;

@@ -23,8 +23,10 @@ class EventsController extends Controller
     public function create(Request $request)
     {
         $event = new Event();
-        $event->title = ['en' => $request->title_en, 'ar' => $request->title_ar];
-        $event->description = $request->description;
+        //$event->title = ['en' => $request->title_en, 'ar' => $request->title_ar];
+        //$event->description = ['en' => $request->description_en, 'ar' => $request->description_ar];
+        $event->title =  $request->title_en;
+        $event->description = $request->description_en;
         $event->category_id = $request->category_id;
         $event->start = $request->event_start;
         $event->end = $request->event_end;
