@@ -30,8 +30,8 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.min.js"></script>
     {{--Switch--}}
-    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <link rel="stylesheet" href="{{asset('css/events.css')}}">
 </head>
@@ -71,46 +71,38 @@
 <div class="container">
     {{--<button id="sas">Test translate</button>--}}
     <div class="card mt-5">
-        <div class="card-header"><h1><i class="far fa-calendar-alt"></i>&nbsp;Events Calender</h1></div>
-
-        {{--<p>
-            <button class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
-                    aria-expanded="false" aria-controls="multiCollapseExample1">Create Event
-            </button>
-        </p>
-        <div class="row">
-            <div class="col">
-                <div class="collapse multi-collapse" id="multiCollapseExample1">
-                    <div class="card card-body">
-                        Some placeholder content for the first collapse component of this multi-collapse example. This panel
-                        is hidden by default but revealed when the user activates the relevant trigger.
-                    </div>
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1><i class="far fa-calendar-alt"></i>&nbsp;Events Calender</h1>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center pt-2 pb-2">
+                    <button id="create_event" class="btn btn-primary">
+                        Create Event
+                    </button>
                 </div>
             </div>
-        </div>--}}
 
+
+        </div>
         <div class="card-body">
             <div id='calendar' class=" mt-3">
             </div>
         </div>
     </div>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
 @include('modal_alert')
 @include('modal_create_event')
 <script src="{{ asset('js/events.js') }}" defer></script>
-
-<script>
-    /*document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
-        console.log(calendarEl.innerHTML)
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            //themeSystem: 'bootstrap',
-            initialView: 'dayGridMonth',
-
-        });
-        calendar.render();
-    });*/
-</script>
 </body>
 </html>
